@@ -22,8 +22,14 @@ import { WalletDialogProvider } from '@solana/wallet-adapter-material-ui';
 import { ThemeProvider, createTheme } from '@material-ui/core';
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'sora',
+  },
   palette: {
     type: 'dark',
+    secondary: {
+      main: '#fff',
+    },
   },
 });
 

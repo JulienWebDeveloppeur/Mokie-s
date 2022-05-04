@@ -32,12 +32,13 @@ import { GatewayProvider } from '@civic/solana-gateway-react';
 import { sendTransaction } from './connection';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 
+import Mokies from './assets/images/Mokies.png';
+
 const ConnectButton = styled(WalletDialogButton)`
   width: 100%;
   height: 60px;
-  margin-top: 10px;
   margin-bottom: 5px;
-  background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
+  background: #393ccc;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -478,13 +479,27 @@ const Home = (props: HomeProps) => {
 
   return (
     <Container style={{ marginTop: 100 }}>
-      <Container maxWidth="xs" style={{ position: 'relative' }}>
+      <Container
+        maxWidth="md"
+        style={{
+          position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Typography variant="h1" color="secondary">
+          The Mokie's
+        </Typography>
+        <img src={Mokies} style={{ width: '300px', margin: '4rem 0' }} />
         <Paper
           style={{
             padding: 24,
             paddingBottom: 10,
-            backgroundColor: '#151A1F',
+            backgroundColor: 'rgba(255,255,255,0.1)',
             borderRadius: 6,
+            width: '400px',
           }}
         >
           {!wallet.connected ? (
@@ -693,14 +708,6 @@ const Home = (props: HomeProps) => {
               </MintContainer>
             </>
           )}
-          <Typography
-            variant="caption"
-            align="center"
-            display="block"
-            style={{ marginTop: 7, color: 'grey' }}
-          >
-            Powered by METAPLEX
-          </Typography>
         </Paper>
       </Container>
 
